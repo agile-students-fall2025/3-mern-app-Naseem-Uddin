@@ -57,6 +57,19 @@ app.get('/messages/:messageId', async (req, res) => {
     })
   }
 })
+
+app.get("/about", (req, res) => {
+  res.json({
+    name: "Naseem Uddin",
+    bio: `Hi! I’m a senior Computer Science student at New York University with a passion for software engineering and technology-driven problem solving. 
+    I enjoy building creative solutions that make everyday life easier and more efficient. 
+    \n\nOutside of coding, I’m an avid soccer fan, gamer, and foodie who loves exploring New York’s endless food spots and events. \n\n
+    Whether I’m working on a new project or trying a new dish, I’m always looking for ways to learn, create, and connect with others.`,
+    imageUrl: "https://static01.nyt.com/images/2020/01/28/multimedia/28xp-memekid3/28cp-memekid3-superJumbo.jpg"
+  });
+});
+
+
 // a route to handle logging out users
 app.post('/messages/save', async (req, res) => {
   // try to save the message to the database
